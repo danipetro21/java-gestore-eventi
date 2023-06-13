@@ -80,6 +80,6 @@ public class Evento {
     @Override
     public String toString() {
         return "titolo='" + titolo + '\'' +
-                        ", data=" + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) ;
+                ", data=" + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 }
