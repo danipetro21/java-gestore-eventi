@@ -51,18 +51,15 @@ public class Test {
 
 
 
-/*        System.out.println(p.getListaEventi());
+/*      System.out.println(p.getListaEventi());
 
-*//*        p.getListaEventiByData(LocalDate.parse("2020-05-21"));*//*
+        p.getListaEventiByData(LocalDate.parse("2020-05-21"));*//*
 
         System.out.println("Numero di eventi in lista: " + p.numerEventi());
 
         p.destroyListaEventi();
 
         System.out.println("Lista aggiornata " + p.getListaEventi());*/
-
-
-
 
 
     }

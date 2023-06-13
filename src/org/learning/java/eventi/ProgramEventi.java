@@ -1,6 +1,6 @@
 package org.learning.java.eventi;
 
-import java.awt.print.PrinterGraphics;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
