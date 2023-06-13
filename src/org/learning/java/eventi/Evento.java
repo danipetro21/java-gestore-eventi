@@ -68,7 +68,7 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Titolo evento: " + titolo + '|' +
-                "Data evento: " + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + '|' + "Posti prenotati: " + postiPrenotati + '|' + "Posti disponibili: " + postiTotali;
+        return "Titolo evento: " + titolo + '\n' +
+                "Data evento: " + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + '\n' + "Posti prenotati: " + postiPrenotati + '\n' + "Posti disponibili: " + postiTotali + '\n';
     }
 }
