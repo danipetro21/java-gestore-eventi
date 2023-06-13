@@ -44,42 +44,31 @@ public class Evento {
     }
 
 
-    public void prenota(LocalDate dataP) {
-
+    public void prenota(LocalDate dataP, int postiP) {
         boolean isAfter = data.isAfter(dataP);
-
-        if (!isAfter) {
+        if (!isAfter || postiP > postiTotali) {
             System.out.println("Mi dispiace ma l'evento è già passato o non sono disponibili i posti che hai prenotato!");
         } else {
-            postiPrenotati++;
-            postiTotali--;
-
+            postiPrenotati += postiP;
+            postiTotali -= postiPrenotati;
             System.out.println("Prenotazione avvenuta con successo!!");
-
-            System.out.println("Numero posti rimanenti: " + postiTotali);
         }
-
     }
 
-    public void disdici(LocalDate dataP) {
+    public void disdici(LocalDate dataP, int postiP) {
         boolean isAfter = data.isAfter(dataP);
-
-        if (!isAfter && postiPrenotati < 0) {
+        if (!isAfter || postiPrenotati < 0) {
             System.out.println("Mi dispiace ma l'evento è già passato o non ci sono prenotazioni");
-
         } else {
-            postiPrenotati--;
-            postiTotali++;
-
+            postiPrenotati -= postiP;
+            postiTotali += postiPrenotati;
             System.out.println("Evento disdetto con successo");
-
-            System.out.println("Numero posti rimanenti: " + postiTotali);
         }
     }
 
     @Override
     public String toString() {
-        return "titolo='" + titolo + '\'' +
-                ", data=" + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return "Titolo evento: " + titolo + '|' +
+                "Data evento: " + data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + '|' + "Posti prenotati: " + postiPrenotati + '|' + "Posti disponibili: " + postiTotali;
     }
 }

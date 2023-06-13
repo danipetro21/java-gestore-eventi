@@ -40,26 +40,22 @@ public class Main {
         System.out.print("Quale giorno vuoi prenotare: ");
         dataP = scan.nextLine();
 
-        for (int i = 0; i < pren; i++) {
-            event.prenota(LocalDate.parse(dataP));
-        }
-
-        System.out.println(event.toString());
+        event.prenota(LocalDate.parse(dataP), pren);
 
 
         String scelta;
         System.out.print("Vuoi disdire qualche prenotazione: s/n ");
         scelta = scan.nextLine();
 
-        switch (scelta){
+        switch (scelta) {
             case "s":
                 System.out.println("quante prenotazioni vuoi disdire: ");
                 int prenD = Integer.parseInt(scan.nextLine());
                 System.out.println("Che giorno hai prenotato");
                 String dataD = scan.nextLine();
-                for (int i = 0; i < prenD; i++) {
-                    event.disdici(LocalDate.parse(dataD));
-                }
+
+                event.disdici(LocalDate.parse(dataD), prenD);
+
                 break;
             default:
                 System.out.println("arrivederci!!");
@@ -67,10 +63,7 @@ public class Main {
         }
 
 
-
-
-
-
+        System.out.println(event.toString());
 
     }
 
